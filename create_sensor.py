@@ -84,8 +84,8 @@ if __name__ == '__main__':
 	f1.close()
 	np.save("distance1.npy", 1./distance1)
 	np.save("distance2.npy", 1./distance2)
-	np.save("distance2.npy",points1)
-	np.save("distance2.npy",points2)
+	np.save("point1.npy",points1)
+	np.save("point2.npy",points2)
 
 	#clf = manifold.MDS(n_components=1, n_init=1, max_iter=100)
 
