@@ -26,9 +26,9 @@ def plot2(point):
 
 
 if __name__ == '__main__':
-	points1    = create_point(2,1,300)
-	points2    = create_point(2,1,300)
-	hand_size  = 0.3
+	points1    = create_point(3,2,50)
+	points2    = create_point(3,2,50)
+	hand_size  = 0.5
 	#plot(points)
 	Cube_2_off = np.loadtxt("./Assets/data/Cube_2_off.csv",delimiter=",")
 	Cube_2_on  = np.loadtxt("./Assets/data/Cube_2_on.csv",delimiter=",")
