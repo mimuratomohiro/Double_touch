@@ -29,12 +29,41 @@ public class script : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (t % 10 == 0)
+        if (t % 20 == 0)
         {
-            name1_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
-            name2_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
-            name3_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
-            name4_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
+            if ((t / 20) % 4 == 0)
+            {
+                Debug.Log(t);
+                name1_body.freezeRotation = false;
+                name1_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
+                name2_body.freezeRotation = true;
+                name3_body.freezeRotation = true;
+                name4_body.freezeRotation = true;
+            }
+            if ((t / 20) % 4 == 1)
+            {
+                name2_body.freezeRotation = false;
+                name2_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
+                name1_body.freezeRotation = true;
+                name3_body.freezeRotation = true;
+                name4_body.freezeRotation = true;
+            }
+            if ((t / 20) % 4 == 2)
+            {
+                name3_body.freezeRotation = false;
+                name3_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
+                name1_body.freezeRotation = true;
+                name2_body.freezeRotation = true;
+                name4_body.freezeRotation = true;
+            }
+            if ((t / 20) % 4 == 3)
+            {
+                name4_body.freezeRotation = false;
+                name4_body.AddTorque(new Vector3(1, 0, 0) * Random.Range(-150.0f, 150.0f));
+                name1_body.freezeRotation = true;
+                name2_body.freezeRotation = true;
+                name3_body.freezeRotation = true;
+            }
         }
     }
 

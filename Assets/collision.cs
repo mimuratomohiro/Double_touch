@@ -8,8 +8,8 @@ public class collision : MonoBehaviour {
     public Vector3 position;
     public StreamWriter sw;
     public FileInfo fi;
-    public StreamWriter sw1;
-    public FileInfo fi1;
+    //public StreamWriter sw1;
+    //public FileInfo fi1;
     float angle;
     int t    =  0;
     int on   =  0;
@@ -20,8 +20,8 @@ public class collision : MonoBehaviour {
         position = this.transform.position + Vector3.down*2;
         fi = new FileInfo(Application.dataPath + "/"+this.name+"_on.csv");
         sw = fi.AppendText();
-        fi1 = new FileInfo(Application.dataPath + "/" + this.name + "_off.csv");
-        sw1 = fi1.AppendText();
+        //fi1 = new FileInfo(Application.dataPath + "/" + this.name + "_off.csv");
+        //sw1 = fi1.AppendText();
     }
 
     void Update()
@@ -36,12 +36,12 @@ public class collision : MonoBehaviour {
             {
                 angle = this.transform.localEulerAngles.x;
             }
-            Debug.Log(" angle: " + angle + " time: " + t + " on: " + on);
-            if (on == 0)
-            {
-                sw1.WriteLine(9.0 + "," + angle + "," + t + "," + on);
-                sw1.Flush();
-            }
+            //Debug.Log(" angle: " + angle + " time: " + t + " on: " + on);
+            //if (on == 0)
+            //{
+                //sw1.WriteLine(9.0 + "," + angle + "," + t + "," + on);
+                //sw1.Flush();
+            //}
         }
         t += 1;
         on = 0;
@@ -55,8 +55,7 @@ public class collision : MonoBehaviour {
         var axis = Vector3.Cross(contact.point + position, Vector3.up * 2);
         angle = Vector3.Angle(contact.point + position, Vector3.up * 2);
         var res = Quaternion.AngleAxis(angle, axis) * (contact.point + position);
-        Debug.Log("distance: " + (res - position).y + " angle: " + angle + " time: " + t + " on: " + on);
-        sw.WriteLine((res - position).y + "," + angle + "," + t + "," + on);
+        Debug.Log(this.name + "collition:1 distance: " + (res - position).y + " angle: " + angle);
         sw.Flush();
     }
 
@@ -68,7 +67,7 @@ public class collision : MonoBehaviour {
     void OnApplicationQuit()
     {
         sw.Close();
-        sw1.Close();
+        //sw1.Close();
     }
 
 }

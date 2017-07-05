@@ -9,7 +9,7 @@ public class ChangeColorScript : MonoBehaviour
     void Start()
     {
         render = this.GetComponent<Renderer>();
-        Debug.Log(render.material.color);
+        //Debug.Log(render.material.color);
 
         render.material.color = Color.blue;
 

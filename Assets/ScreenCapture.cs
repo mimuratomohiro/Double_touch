@@ -30,7 +30,7 @@ public class ScreenCapture : MonoBehaviour
             time += deltaTime;
             if (time <= deltaTime + 1f)
             {
-                print(frame + " fps");
+                //print(frame + " fps");
                 frame = 0;
                 time = deltaTime;
             }

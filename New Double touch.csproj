@@ -78,6 +78,10 @@
     <Compile Include="Assets\ChangeColorScript.cs" />
     <Compile Include="Assets\ScreenCapture.cs" />
     <Compile Include="Assets\collision.cs" />
+    <Compile Include="Assets\collision_1.cs" />
+    <Compile Include="Assets\collision_2.cs" />
+    <Compile Include="Assets\collision_3.cs" />
+    <Compile Include="Assets\collision_4.cs" />
     <Compile Include="Assets\script.cs" />
     <Compile Include="Assets\white.cs" />
   </ItemGroup>
